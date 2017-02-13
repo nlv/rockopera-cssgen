@@ -1,0 +1,243 @@
+
+@import url(font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Roboto Slab:100,100italic,300,300italic,400,400italic);
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em
+{
+  margin         : 0px 0px 0px 0px;
+  padding        : 0px 0px 0px 0px;
+  border         : none 0px none;
+  font-size      : 100%;
+  font           : inherit  ;
+  vertical-align : middle;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section
+{
+  display : block;
+}
+
+ol,
+ul
+{
+  list-style : none none none;
+}
+
+blockquote,
+q
+{
+  quotes : none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after
+{
+  content : "";
+  content : none;
+}
+
+table
+{
+  border-collapse : collapse;
+  border-spacing  : 0;
+}
+
+html
+{
+  -webkit-box-sizing : border-box;
+  -moz-box-sizing    : border-box;
+  -ms-box-sizing     : border-box;
+  -o-box-sizing      : border-box;
+  box-sizing         : border-box;
+  font-family        : "Roboto", serif;
+  font-size          : 16px;
+}
+
+body
+{
+  width     : 90vw;
+  max-width : 90vw;
+  margin    : auto auto auto auto;
+}
+
+
+header > nav li
+{
+  float      : left;
+  width      : 11.11111%;
+  padding    : 5px 5px 5px 5px;
+  text-align : center;
+}
+
+header > nav li a
+{
+  text-decoration : none;
+  font-weight     : bold;
+  color           : #000000;
+}
+
+.clearfix::after
+{
+  content : "";
+  display : table;
+  clear   : both;
+}
+
+#main
+{
+  display    : flex;
+  margin-top : 10px;
+}
+
+#main nav
+{
+  padding : 20px 20px 20px 20px;
+}
+
+#main nav .maindiv
+{
+  color               : #0000ff;
+  padding-bottom      : 5px;
+  border-bottom-color : #0000ff;
+  border-bottom-style : solid;
+  border-bottom-width : 1px;
+}
+
+#main nav .subdivs > li
+{
+  padding-top : 5px;
+}
+
+#main nav > ul > li
+{
+  padding-top    : 10px;
+  padding-bottom : 10px;
+}
+
+#main #nav-left
+{
+  text-align : right;
+}
+
+#main #nav-right
+{
+  text-align : left;
+}
+
+#main #content
+{
+  margin-left : auto;
+  flex-grow   : 4;
+  padding     : 20px 20px 20px 20px;
+  line-height : 1.6;
+}
+
+
+#main #content p
+{
+  margin-top : 1rem;
+  text-align : justify;
+}
+
+#main div.iframe
+{
+  text-align : center;
+}
+
+
+#main article header
+{
+  font-size   : 1.39999em;
+  text-align  : center;
+  font-weight : bold;
+  margin-top  : 1rem;
+}
+
+.carusel
+{
+  display         : flex;
+  justify-content : space-between;
+  align-items     : stretch;
+  margin-top      : 2em;
+}
+
+.carusel li
+{
+  flex-grow     : 1;
+  flex-basis    : 33.32999%;
+  padding-left  : 5px;
+  padding-right : 5px;
+}
+
+.carusel li img
+{
+  width  : 100%;
+  height : 100%;
+}
+
+
+#news article
+{
+  border        : solid 1px #000000;
+  margin-top    : 2em;
+  margin-bottom : 2em;
+  padding       : 5px 5px 5px 5px;
+}
+
+#news article header
+{
+  font-size   : 0.8rem;
+  line-height : 1;
+  text-align  : justify;
+}
+
+#news .photo
+{
+  float   : left;
+  width   : 25%;
+  padding : 5px 5px 5px 5px;
+}
+
+
+#news .photo img
+{
+  width : 100%;
+}
+
+
+/* Generated with Clay, http://fvisser.nl/clay */

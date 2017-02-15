@@ -33,7 +33,7 @@ main = putCss $ do
   let cfg = Config {
               topMenuCount = 8
              ,debug = False
-             ,rootFontSize = 16
+             ,rootFontSize = 17
              ,mainContentWidthRatio = 4
              ,mainSectionTopMargin = px 10
              ,mainSectionsPadding = px 20
@@ -61,6 +61,7 @@ mainCSS cfg = do
       width (vw 90)
       maxWidth (vw 90)
       sym margin auto
+      textAlign center
 
     {-- главное меню --}
     header |> nav ? li ? do
@@ -84,6 +85,7 @@ mainCSS cfg = do
     {-- основные разделы --}
     "#main" ? do
       display flex
+      justifyContent spaceAround
 
       marginTop (mainSectionTopMargin cfg)
 
@@ -122,7 +124,9 @@ mainCSS cfg = do
       "#content" ? do
         debugBox blue
 
-        marginLeft auto
+        -- marginLeft auto
+        maxWidth (px 600)
+        textAlign center
 
         flexGrow $ mainContentWidthRatio cfg
         sym padding (mainSectionsPadding cfg)
@@ -138,7 +142,6 @@ mainCSS cfg = do
 
       Elements.div # ".iframe" ? do
         debugBox red
-        textAlign center
 
       article ? header ? do
         fontSize (Size.em 1.4)
@@ -171,21 +174,40 @@ mainCSS cfg = do
 
       article ? do
         border solid (px 1) black
+        display flex
 
         marginTop (Size.em 2)
         marginBottom (Size.em 2)
 
         sym padding (px 5)
 
-        header ? do 
-          fontSize (Size.rem 0.8)
-          lineHeight $ unitless 1
+        ".logo" ? do
+          display flex
+          flexDirection column
+--        alignItems stretch
+
+          Elements.div # ".date" ? do
+            textAlign start
+            fontSize (Size.em 0.8)
+
+        section # ".title" ? do
           textAlign justify
+
+          h1 ? do
+            fontWeight bold
+            lineHeight (Size.em 1.2)
+
+          h2 ? do
+            marginTop (Size.em 1)
+            fontSize (Size.em 0.8)
+            lineHeight (Size.em 1.2)
+
+
 
 
       ".photo" ? do
-        float floatLeft
-        width (pct 25)
+--        float floatLeft
+--        width (pct 25)
         sym padding (px 5)
 
       ".photo" ? img ? do

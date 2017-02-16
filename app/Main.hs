@@ -36,7 +36,7 @@ main = putCss $ do
              ,rootFontSize = 17
              ,mainContentWidthRatio = 4
              ,mainSectionTopMargin = px 10
-             ,mainSectionsPadding = px 20
+             ,mainSectionsPadding = px 60
              ,mainNavPadding = px 10
              ,maindivPadding = px 5
              ,subdivPadding = px 5
@@ -91,6 +91,7 @@ mainCSS cfg = do
 
       nav ? do
         debugBox blue
+        maxWidth (pct 25)
 
 --        flexGrow 1
         sym padding (mainSectionsPadding cfg)

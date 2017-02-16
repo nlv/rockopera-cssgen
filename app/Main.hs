@@ -32,7 +32,7 @@ main = putCss $ do
 
   let cfg = Config {
               topMenuCount = 8
-             ,debug = False
+             ,debug = True
              ,rootFontSize = 17
              ,mainContentWidthRatio = 4
              ,mainSectionTopMargin = px 10
@@ -61,8 +61,34 @@ mainCSS cfg = do
       width (vw 90)
       maxWidth (vw 90)
       sym margin auto
-      textAlign center
 
+      display flex
+      flexDirection column
+
+      debugBox red
+
+      main_ <? display none
+
+    header ? do
+      debugBox blue
+
+      nav <? do
+        display flex
+        justifyContent center
+
+        ul <? do
+          display flex
+
+          li ? do
+            sym2 padding (Size.rem 1) (Size.rem 2)
+            a ? fontWeight bold
+      
+
+    nav ? a ? do
+        textDecoration none
+        color black
+
+{- !!!
     {-- главное меню --}
     header |> nav ? li ? do
       float floatLeft
@@ -213,7 +239,7 @@ mainCSS cfg = do
 
       ".photo" ? img ? do
         width (pct 100)
-
+--}
      
 
   

@@ -37,7 +37,7 @@ main :: IO ()
 main = putCss $ do
 
   let cfg = Config {
-              debug = False
+              debug = True
              ,rootFontSizeOther = 15
              ,rootFontSizeLarge = 17
              {-
@@ -78,22 +78,37 @@ smallPhone = query Clay.all [Media.maxWidth 480 ]
 largeDesktopCSS cfg = largeDesktop $ do 
     -- html ? fontSize (px $ fromInteger $ rootFontSizeLarge cfg)
     html ? fontSize (px 17)
+    body |> main_ |> main_ ? do      -- DEBUG
+          minWidth (px 600)          -- DEBUG
+          maxWidth (px 600)          -- DEBUG
 
 mediumDesktopCSS cfg = mediumDesktop $ do
     html ? fontSize (px 15)
+    body |> main_ |> main_ ? do      -- DEBUG
+          minWidth (px 500)          -- DEBUG
+          maxWidth (px 500)          -- DEBUG
 
 smallDesktopCSS cfg = smallDesktop $ do
     html ? fontSize (px 15)
+    body |> main_ |> main_ ? do      -- DEBUG
+          minWidth (px 390)          -- DEBUG
+          maxWidth (px 390)          -- DEBUG
     bodyNarrow
     mainNavNarrow
 
 largePhoneCSS cfg = largePhone $ do
     html ? fontSize (px 12)
+    body |> main_ |> main_ ? do      -- DEBUG
+          minWidth (px 390)          -- DEBUG
+          maxWidth (px 390)          -- DEBUG
     bodyNarrow
     mainNavNarrow
 
 smallPhoneCSS cfg = smallPhone $ do
     html ? fontSize (px 12)
+    body |> main_ |> main_ ? do      -- DEBUG
+          minWidth (px 240)          -- DEBUG
+          maxWidth (px 240)          -- DEBUG
     bodyNarrow
     mainNavNarrow
     
@@ -122,21 +137,23 @@ mainCSS cfg = do
       display flex
       flexDirection column
 
-      debugBox cfg red
+      debugBox cfg red       -- DEBUG
 
       main_ <? do
         display flex
         justifyContent center
 
-        debugBox cfg green
+        debugBox cfg green   -- DEBUG
         
-        main_ <? display none
+        main_ <? do
+          debugBox cfg black         -- DEBUG
+          section <? display none    -- DEBUG
 
-        nav <? debugBox cfg blue
+        nav <? debugBox cfg blue     -- DEBUG
 
 
     header ? do
-      debugBox cfg blue
+      debugBox cfg blue              -- DEBUG
 
       nav <? do
         display flex
@@ -157,6 +174,12 @@ mainCSS cfg = do
         color black
 
     main_ |> nav # ".parts-links" ? do
+      debugBox cfg yellow             -- DEBUG
+
+      flexBasis (pct 25)
+      flexGrow 1
+      flexShrink 1
+
       sym padding (Size.em 1)
       
       ul <? li <? do
@@ -173,9 +196,8 @@ mainCSS cfg = do
           borderBottomStyle solid
           borderBottomWidth (px 1)
 
-        debugBox cfg orange
+        debugBox cfg orange              -- DEBUG
 
-      debugBox cfg yellow
     
     "#nav-left" ? do
       textAlign (alignSide sideRight)

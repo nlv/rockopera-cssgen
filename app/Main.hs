@@ -136,6 +136,7 @@ mainCSS cfg = do
         ul <? do
           display flex
           flexWrap Flexbox.wrap
+          justifyContent center
 
           li ? do
             a ? fontWeight bold

@@ -37,7 +37,7 @@ main :: IO ()
 main = putCss $ do
 
   let cfg = Config {
-              debug = True
+              debug = False
              ,rootFontSizeOther = 15
              ,rootFontSizeLarge = 17
              {-
@@ -124,7 +124,16 @@ mainCSS cfg = do
 
       debugBox cfg red
 
-      main_ <? display none
+      main_ <? do
+        display flex
+        justifyContent center
+
+        debugBox cfg green
+        
+        main_ <? display none
+
+        nav <? debugBox cfg blue
+
 
     header ? do
       debugBox cfg blue
@@ -147,25 +156,34 @@ mainCSS cfg = do
         textDecoration none
         color black
 
+    main_ |> nav # ".parts-links" ? do
+      sym padding (Size.em 1)
+      
+      ul <? li <? do
+        paddingTop (Size.em 1)
+
+        lineHeight (Size.em 1.5)
+
+        p <? do
+          
+          color blue
+          fontWeight bold
+
+          borderBottomColor blue
+          borderBottomStyle solid
+          borderBottomWidth (px 1)
+
+        debugBox cfg orange
+
+      debugBox cfg yellow
+    
+    "#nav-left" ? do
+      textAlign (alignSide sideRight)
+
+      "ul" <? li ? do
+        alignItems flexEnd
+
 {- !!!
-    {-- главное меню --}
-    header |> nav ? li ? do
-      float floatLeft
-      width (pct (100 / (fromIntegral $ (topMenuCount cfg + 1))))
-      sym padding (px 5)
-      textAlign (other "center")
-  
-      debugBox cfg red
-
-      a ? do
-        textDecoration none
-        fontWeight bold
-        color black
-
-    ".clearfix" # after ? do
-        content $ stringContent ""
-        display Display.table
-        clear both
 
     {-- основные разделы --}
     "#main" ? do
@@ -180,32 +198,6 @@ mainCSS cfg = do
 
 --        flexGrow 1
         sym padding (mainSectionsPadding cfg)
-
-        ".maindiv" ? do
-          color blue
-
-          paddingBottom (maindivPadding cfg)
-          borderBottomColor blue
-          borderBottomStyle solid
-          borderBottomWidth (px 1)
-
-        ".subdivs" |> li ? do
---          paddingBottom (subdivPadding cfg)
-          paddingTop (subdivPadding cfg)
-
---        ".subdivs" |> li # lastChild ? do
-
-
-
-      nav |> ul |> li ? do
-        paddingTop (mainNavPadding cfg)
-        paddingBottom (mainNavPadding cfg)
-
-      "#nav-left" ? do
-        textAlign (alignSide sideRight)
-
-      "#nav-right" ? do
-        textAlign (alignSide sideLeft)
 
       "#content" ? do
         debugBox cfg blue

@@ -94,22 +94,20 @@ body
   margin         : auto auto auto auto;
   display        : flex;
   flex-direction : column;
-  border-style   : solid;
-  border-color   : #ff0000;
-  border-width   : 1px;
 }
 
 body > main
 {
+  display         : flex;
+  justify-content : center;
+}
+
+body > main > main
+{
   display : none;
 }
 
-header
-{
-  border-style : solid;
-  border-color : #0000ff;
-  border-width : 1px;
-}
+
 
 header > nav
 {
@@ -139,6 +137,38 @@ nav a
 {
   text-decoration : none;
   color           : #000000;
+}
+
+main > nav.parts-links
+{
+  padding : 1em 1em 1em 1em;
+}
+
+
+main > nav.parts-links > ul > li
+{
+  padding-top : 1em;
+  line-height : 1.5em;
+}
+
+main > nav.parts-links > ul > li > p
+{
+  color               : #0000ff;
+  font-weight         : bold;
+  border-bottom-color : #0000ff;
+  border-bottom-style : solid;
+  border-bottom-width : 1px;
+}
+
+#nav-left
+{
+  text-align : right;
+}
+
+
+#nav-left > ul li
+{
+  align-items : flex-end;
 }
 
 @media all and (min-width: 1200px)

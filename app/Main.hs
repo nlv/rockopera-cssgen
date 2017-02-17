@@ -83,14 +83,23 @@ mediumDesktopCSS cfg = mediumDesktop $ do
     html ? fontSize (px 15)
 
 smallDesktopCSS cfg = smallDesktop $ do
+    body ? do
+      width (vw 100)
+      maxWidth (vw 100)
     html ? fontSize (px 15)
     header |> nav |> ul |> li ? sym2 padding (Size.rem 1) (Size.rem 1)
 
 largePhoneCSS cfg = largePhone $ do
+    body ? do
+      width (vw 100)
+      maxWidth (vw 100)
     html ? fontSize (px 12)
     header |> nav |> ul |> li ? sym2 padding (Size.rem 1) (Size.rem 1)
 
 smallPhoneCSS cfg = smallPhone $ do
+    body ? do
+      width (vw 100)
+      maxWidth (vw 100)
     html ? fontSize (px 12)
     header |> nav |> ul |> li ? sym2 padding (Size.rem 1) (Size.rem 1)
 

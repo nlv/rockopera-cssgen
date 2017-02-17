@@ -76,31 +76,18 @@ smallPhone :: Css -> Css
 smallPhone = query Clay.all [Media.maxWidth 480 ]
 
 largeDesktopCSS cfg = largeDesktop $ do 
-    -- html ? fontSize (px $ fromInteger $ rootFontSizeLarge cfg)
     html ? fontSize (px 17)
-    body |> main_ |> main_ ? do      -- DEBUG
-          minWidth (px 600)          -- DEBUG
-          maxWidth (px 600)          -- DEBUG
 
 mediumDesktopCSS cfg = mediumDesktop $ do
     html ? fontSize (px 15)
-    body |> main_ |> main_ ? do      -- DEBUG
-          minWidth (px 500)          -- DEBUG
-          maxWidth (px 500)          -- DEBUG
 
 smallDesktopCSS cfg = smallDesktop $ do
     html ? fontSize (px 15)
-    body |> main_ |> main_ ? do      -- DEBUG
-          minWidth (px 390)          -- DEBUG
-          maxWidth (px 390)          -- DEBUG
     bodyNarrow
     mainNavNarrow
 
 largePhoneCSS cfg = largePhone $ do
     html ? fontSize (px 12)
-    body |> main_ |> main_ ? do      -- DEBUG
-          minWidth (px 390)          -- DEBUG
-          maxWidth (px 390)          -- DEBUG
     bodyNarrow
     mainNavNarrow
 
@@ -147,6 +134,7 @@ mainCSS cfg = do
         
         main_ <? do
           debugBox cfg black         -- DEBUG
+          flexBasis (pct 50)         -- DEBUG
           section <? display none    -- DEBUG
 
         nav <? debugBox cfg blue     -- DEBUG

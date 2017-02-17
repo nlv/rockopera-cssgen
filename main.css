@@ -113,6 +113,7 @@ body > main > main
   border-style : solid;
   border-color : #000000;
   border-width : 1px;
+  flex-basis   : 50%;
 }
 
 body > main > main > section
@@ -213,12 +214,6 @@ html
   font-size : 17px;
 }
 
-body > main > main
-{
-  min-width : 600px;
-  max-width : 600px;
-}
-
 }
 @media all and (min-width: 992px) and (max-width: 1199px)
 {
@@ -228,12 +223,6 @@ html
   font-size : 15px;
 }
 
-body > main > main
-{
-  min-width : 500px;
-  max-width : 500px;
-}
-
 }
 @media all and (min-width: 768px) and (max-width: 991px)
 {
@@ -241,12 +230,6 @@ body > main > main
 html
 {
   font-size : 15px;
-}
-
-body > main > main
-{
-  min-width : 390px;
-  max-width : 390px;
 }
 
 body
@@ -267,12 +250,6 @@ header > nav > ul > li
 html
 {
   font-size : 12px;
-}
-
-body > main > main
-{
-  min-width : 390px;
-  max-width : 390px;
 }
 
 body

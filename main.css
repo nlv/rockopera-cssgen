@@ -85,7 +85,6 @@ html
   -o-box-sizing      : border-box;
   box-sizing         : border-box;
   font-family        : "Roboto", serif;
-  font-size          : 17px;
 }
 
 body
@@ -120,7 +119,8 @@ header > nav
 
 header > nav > ul
 {
-  display : flex;
+  display   : flex;
+  flex-wrap : wrap;
 }
 
 header > nav > ul li
@@ -140,5 +140,65 @@ nav a
   color           : #000000;
 }
 
+@media all and (min-width: 1200px)
+{
+
+html
+{
+  font-size : 17px;
+}
+
+}
+@media all and (min-width: 992px) and (max-width: 1199px)
+{
+
+html
+{
+  font-size : 15px;
+}
+
+}
+@media all and (min-width: 768px) and (max-width: 991px)
+{
+
+html
+{
+  font-size : 15px;
+}
+
+header > nav > ul > li
+{
+  padding : 1rem 1rem 1rem 1rem;
+}
+
+}
+@media all and (min-width: 481px) and (max-width: 767px)
+{
+
+html
+{
+  font-size : 12px;
+}
+
+header > nav > ul > li
+{
+  padding : 1rem 1rem 1rem 1rem;
+}
+
+}
+@media all and (max-width: 480px)
+{
+
+html
+{
+  font-size : 12px;
+}
+
+header > nav > ul > li
+{
+  padding : 1rem 1rem 1rem 1rem;
+}
+
+}
 
 /* Generated with Clay, http://fvisser.nl/clay */

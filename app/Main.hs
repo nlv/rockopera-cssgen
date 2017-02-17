@@ -7,15 +7,20 @@ import Clay
 import Clay.Display as Display
 import Clay.Elements as Elements
 import Clay.Size as Size
+import Clay.Flexbox as Flexbox (wrap)
+import qualified Clay.Media as Media
+
 -- import Clay.Flexbox
 -- import Data.Monoid
 
 import Prelude hiding (repeat)
 
 data Config = Config {
-            topMenuCount :: Int
-           ,debug :: Bool
-           ,rootFontSize :: Integer
+            debug :: Bool
+           ,rootFontSizeLarge :: Integer
+           ,rootFontSizeOther :: Integer
+           {-
+           , topMenuCount :: Int
            ,mainContentWidthRatio :: Int
            ,mainSectionTopMargin :: Size Abs
            ,mainSectionsPadding :: Size Abs
@@ -24,6 +29,7 @@ data Config = Config {
            ,subdivPadding :: Size Abs
 
            ,pMargin :: Size Rel
+           -}
 }
 
 
@@ -31,9 +37,11 @@ main :: IO ()
 main = putCss $ do
 
   let cfg = Config {
-              topMenuCount = 8
-             ,debug = True
-             ,rootFontSize = 17
+              debug = True
+             ,rootFontSizeOther = 15
+             ,rootFontSizeLarge = 17
+             {-
+             ,topMenuCount = 8
              ,mainContentWidthRatio = 4
              ,mainSectionTopMargin = px 10
              ,mainSectionsPadding = px 60
@@ -41,10 +49,50 @@ main = putCss $ do
              ,maindivPadding = px 5
              ,subdivPadding = px 5
              ,pMargin = Size.rem 1
+             -}
              }
 
   reset
   mainCSS cfg
+  largeDesktopCSS cfg
+  mediumDesktopCSS cfg
+  smallDesktopCSS cfg
+  largePhoneCSS cfg
+  smallPhoneCSS cfg
+
+largeDesktop :: Css -> Css
+largeDesktop = query Clay.all [Media.minWidth 1200]
+
+mediumDesktop :: Css -> Css
+mediumDesktop = query Clay.all [Media.minWidth 992, Media.maxWidth 1199]
+
+smallDesktop :: Css -> Css
+smallDesktop = query Clay.all [Media.minWidth 768, Media.maxWidth 991]
+
+largePhone :: Css -> Css
+largePhone = query Clay.all [Media.minWidth 481, Media.maxWidth 767]
+
+smallPhone :: Css -> Css
+smallPhone = query Clay.all [Media.maxWidth 480 ]
+
+largeDesktopCSS cfg = largeDesktop $ do 
+    -- html ? fontSize (px $ fromInteger $ rootFontSizeLarge cfg)
+    html ? fontSize (px 17)
+
+mediumDesktopCSS cfg = mediumDesktop $ do
+    html ? fontSize (px 15)
+
+smallDesktopCSS cfg = smallDesktop $ do
+    html ? fontSize (px 15)
+    header |> nav |> ul |> li ? sym2 padding (Size.rem 1) (Size.rem 1)
+
+largePhoneCSS cfg = largePhone $ do
+    html ? fontSize (px 12)
+    header |> nav |> ul |> li ? sym2 padding (Size.rem 1) (Size.rem 1)
+
+smallPhoneCSS cfg = smallPhone $ do
+    html ? fontSize (px 12)
+    header |> nav |> ul |> li ? sym2 padding (Size.rem 1) (Size.rem 1)
 
 
 mainCSS cfg = do
@@ -55,7 +103,6 @@ mainCSS cfg = do
       boxSizing borderBox
 
       fontFamily ["Roboto"] [serif]
-      fontSize (px $ fromInteger $ rootFontSize cfg)
 
     body ? do
       width (vw 90)
@@ -65,12 +112,12 @@ mainCSS cfg = do
       display flex
       flexDirection column
 
-      debugBox red
+      debugBox cfg red
 
       main_ <? display none
 
     header ? do
-      debugBox blue
+      debugBox cfg blue
 
       nav <? do
         display flex
@@ -78,10 +125,11 @@ mainCSS cfg = do
 
         ul <? do
           display flex
+          flexWrap Flexbox.wrap
 
           li ? do
-            sym2 padding (Size.rem 1) (Size.rem 2)
             a ? fontWeight bold
+            sym2 padding (Size.rem 1) (Size.rem 2)
       
 
     nav ? a ? do
@@ -96,7 +144,7 @@ mainCSS cfg = do
       sym padding (px 5)
       textAlign (other "center")
   
-      debugBox red
+      debugBox cfg red
 
       a ? do
         textDecoration none
@@ -116,7 +164,7 @@ mainCSS cfg = do
       marginTop (mainSectionTopMargin cfg)
 
       nav ? do
-        debugBox blue
+        debugBox cfg blue
         maxWidth (pct 25)
 
 --        flexGrow 1
@@ -149,7 +197,7 @@ mainCSS cfg = do
         textAlign (alignSide sideLeft)
 
       "#content" ? do
-        debugBox blue
+        debugBox cfg blue
 
         -- marginLeft auto
         maxWidth (px 600)
@@ -168,7 +216,7 @@ mainCSS cfg = do
         textAlign justify
 
       Elements.div # ".iframe" ? do
-        debugBox red
+        debugBox cfg red
 
       article ? header ? do
         fontSize (Size.em 1.4)
@@ -240,17 +288,15 @@ mainCSS cfg = do
       ".photo" ? img ? do
         width (pct 100)
 --}
+--
      
 
-  
+debugIt cfg action  = if (debug cfg) then action else return ()
 
-     where debugIt action = 
-              if (debug cfg) then action else return ()
 
-           box color = do
+debugBox cfg color = debugIt cfg $ box color
+    where box color = do
               borderStyle solid
               borderColor color
               borderWidth (px 1)
-
-           debugBox color = debugIt $ box color
 

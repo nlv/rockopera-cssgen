@@ -179,8 +179,8 @@ main > nav.parts-links
 
 main > nav.parts-links > ul > li
 {
-  padding-top  : 1em;
-  line-height  : 1.5em;
+  padding-top  : 1.5em;
+  line-height  : 1.19999em;
   border-style : solid;
   border-color : #ffa500;
   border-width : 1px;
@@ -193,6 +193,18 @@ main > nav.parts-links > ul > li > p
   border-bottom-color : #0000ff;
   border-bottom-style : solid;
   border-bottom-width : 1px;
+}
+
+
+main > nav.parts-links > ul > li > ul > li
+{
+  padding-top : 0.8em;
+}
+
+
+main > nav.parts-links > ul > li > ul li:first-child
+{
+  padding-top : 0.5em;
 }
 
 #nav-left

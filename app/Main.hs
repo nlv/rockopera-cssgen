@@ -171,9 +171,8 @@ mainCSS cfg = do
       sym padding (Size.em 1)
       
       ul <? li <? do
-        paddingTop (Size.em 1)
-
-        lineHeight (Size.em 1.5)
+        paddingTop (Size.em 1.5)
+        lineHeight (Size.em 1.2)
 
         p <? do
           
@@ -183,6 +182,12 @@ mainCSS cfg = do
           borderBottomColor blue
           borderBottomStyle solid
           borderBottomWidth (px 1)
+
+        ul <? li <? do
+          paddingTop (Size.em 0.8)
+
+        ul <? li # ":first-child" ? do
+          paddingTop (Size.em 0.5)
 
         debugBox cfg orange              -- DEBUG
 

@@ -121,6 +121,16 @@ body > main > main > section
   display : none;
 }
 
+body > main > main #intro-video
+{
+  display : block;
+}
+
+body > main > main > section
+{
+  text-align : center;
+}
+
 body > main > nav
 {
   border-style : solid;
@@ -226,6 +236,16 @@ html
   font-size : 17px;
 }
 
+.video-large
+{
+  display : inline;
+}
+
+.video-medium
+{
+  display : none;
+}
+
 }
 @media all and (min-width: 992px) and (max-width: 1199px)
 {
@@ -233,6 +253,16 @@ html
 html
 {
   font-size : 15px;
+}
+
+.video-large
+{
+  display : none;
+}
+
+.video-medium
+{
+  display : inline;
 }
 
 }
@@ -255,6 +285,16 @@ header > nav > ul > li
   padding : 1rem 1rem 1rem 1rem;
 }
 
+.video-large
+{
+  display : none;
+}
+
+.video-medium
+{
+  display : inline;
+}
+
 }
 @media all and (min-width: 481px) and (max-width: 767px)
 {
@@ -273,6 +313,16 @@ body
 header > nav > ul > li
 {
   padding : 1rem 1rem 1rem 1rem;
+}
+
+.video-large
+{
+  display : none;
+}
+
+.video-medium
+{
+  display : inline;
 }
 
 }
@@ -299,6 +349,16 @@ body
 header > nav > ul > li
 {
   padding : 1rem 1rem 1rem 1rem;
+}
+
+.video-large
+{
+  display : none;
+}
+
+.video-medium
+{
+  display : inline;
 }
 
 }

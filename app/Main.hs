@@ -78,18 +78,30 @@ smallPhone = query Clay.all [Media.maxWidth 480 ]
 largeDesktopCSS cfg = largeDesktop $ do 
     html ? fontSize (px 17)
 
+    ".video-large" ? display inline
+    ".video-medium" ? display none
+
 mediumDesktopCSS cfg = mediumDesktop $ do
     html ? fontSize (px 15)
+
+    ".video-large" ? display none
+    ".video-medium" ? display inline
 
 smallDesktopCSS cfg = smallDesktop $ do
     html ? fontSize (px 15)
     bodyNarrow
     mainNavNarrow
 
+    ".video-large" ? display none
+    ".video-medium" ? display inline
+
 largePhoneCSS cfg = largePhone $ do
     html ? fontSize (px 12)
     bodyNarrow
     mainNavNarrow
+
+    ".video-large" ? display none
+    ".video-medium" ? display inline
 
 smallPhoneCSS cfg = smallPhone $ do
     html ? fontSize (px 12)
@@ -98,6 +110,9 @@ smallPhoneCSS cfg = smallPhone $ do
           maxWidth (px 240)          -- DEBUG
     bodyNarrow
     mainNavNarrow
+
+    ".video-large" ? display none
+    ".video-medium" ? display inline
     
 mainNavNarrow = header |> nav |> ul |> li ? sym2 padding (Size.rem 1) (Size.rem 1)
 
@@ -134,10 +149,17 @@ mainCSS cfg = do
         
         main_ <? do
           debugBox cfg black         -- DEBUG
-          flexBasis (pct 50)         -- DEBUG
           section <? display none    -- DEBUG
+          "#intro-video" ? display block -- DEBUG
+
+          flexBasis (pct 50)         
+
+          section <? do
+            textAlign center
 
         nav <? debugBox cfg blue     -- DEBUG
+
+    
 
 
     header ? do
@@ -197,6 +219,7 @@ mainCSS cfg = do
 
       "ul" <? li ? do
         alignItems flexEnd
+
 
 {- !!!
 

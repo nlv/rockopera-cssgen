@@ -37,7 +37,7 @@ main :: IO ()
 main = putCss $ do
 
   let cfg = Config {
-              debug = True
+              debug = False
              ,rootFontSizeOther = 15
              ,rootFontSizeLarge = 17
              {-
@@ -113,14 +113,37 @@ smallPhoneCSS cfg = smallPhone $ do
 
     ".video-large" ? display none
     ".video-medium" ? display inline
-    
+
 mainNavNarrow = header |> nav |> ul |> li ? sym2 padding (Size.rem 1) (Size.rem 1)
 
-bodyNarrow = body ? do
-      width (vw 100)
-      maxWidth (vw 100)
+bodyNarrow = do
+      body ? do
+        width (vw 100)
+        maxWidth (vw 100)
+
+      bodyColumnDirection
 
 
+bodyColumnDirection = do
+      body ? do
+        main_ <? do
+          flexDirection column
+   
+         
+      "#nav-left" ? do 
+        order 1
+        textAlign center
+
+      "#nav-right" ? do
+        order 2
+        textAlign center
+
+      "#main-content" ? do
+        order 3
+
+      main_ |> nav # ".parts-links" |> ul ? do
+        li <? do p <? borderBottomStyle none
+        ul ? display none
 
 mainCSS cfg = do
     importUrl "font-awesome.min.css"

@@ -169,7 +169,8 @@ main > nav.parts-links > ul > li
   line-height : 1.19999em;
 }
 
-main > nav.parts-links > ul > li > p
+
+main > nav.parts-links > ul > li > p a
 {
   color               : #0000ff;
   font-weight         : bold;
@@ -199,6 +200,11 @@ main > nav.parts-links > ul > li > ul li:first-child
 #nav-left > ul li
 {
   align-items : flex-end;
+}
+
+#rubricator
+{
+  display : none;
 }
 
 @media all and (min-width: 1200px)
@@ -259,21 +265,21 @@ body > main
   flex-direction : column;
 }
 
-#nav-left
+#main-content
 {
-  order      : 1;
-  text-align : center;
+  order : 1;
 }
 
-#nav-right
+#nav-left
 {
   order      : 2;
   text-align : center;
 }
 
-#main-content
+#nav-right
 {
-  order : 3;
+  order      : 3;
+  text-align : center;
 }
 
 
@@ -283,9 +289,15 @@ main > nav.parts-links > ul > li > p
   border-bottom-style : none;
 }
 
-main > nav.parts-links > ul ul
+#rubricator
 {
-  display : none;
+  display : inline;
+}
+
+
+#nav-left:target .part-links
+{
+  display : block;
 }
 
 header > nav > ul > li
@@ -324,21 +336,21 @@ body > main
   flex-direction : column;
 }
 
-#nav-left
+#main-content
 {
-  order      : 1;
-  text-align : center;
+  order : 1;
 }
 
-#nav-right
+#nav-left
 {
   order      : 2;
   text-align : center;
 }
 
-#main-content
+#nav-right
 {
-  order : 3;
+  order      : 3;
+  text-align : center;
 }
 
 
@@ -348,9 +360,15 @@ main > nav.parts-links > ul > li > p
   border-bottom-style : none;
 }
 
-main > nav.parts-links > ul ul
+#rubricator
 {
-  display : none;
+  display : inline;
+}
+
+
+#nav-left:target .part-links
+{
+  display : block;
 }
 
 header > nav > ul > li
@@ -395,21 +413,21 @@ body > main
   flex-direction : column;
 }
 
-#nav-left
+#main-content
 {
-  order      : 1;
-  text-align : center;
+  order : 1;
 }
 
-#nav-right
+#nav-left
 {
   order      : 2;
   text-align : center;
 }
 
-#main-content
+#nav-right
 {
-  order : 3;
+  order      : 3;
+  text-align : center;
 }
 
 
@@ -419,9 +437,15 @@ main > nav.parts-links > ul > li > p
   border-bottom-style : none;
 }
 
-main > nav.parts-links > ul ul
+#rubricator
 {
-  display : none;
+  display : inline;
+}
+
+
+#nav-left:target .part-links
+{
+  display : block;
 }
 
 header > nav > ul > li

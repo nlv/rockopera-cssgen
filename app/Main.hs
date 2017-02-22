@@ -129,21 +129,32 @@ bodyColumnDirection = do
         main_ <? do
           flexDirection column
    
+      "#main-content" ? do
+        order 1
          
       "#nav-left" ? do 
-        order 1
-        textAlign center
-
-      "#nav-right" ? do
         order 2
         textAlign center
 
-      "#main-content" ? do
+--        display none
+
+      "#nav-right" ? do
         order 3
+        textAlign center
+
+  --      display none
+
 
       main_ |> nav # ".parts-links" |> ul ? do
         li <? do p <? borderBottomStyle none
-        ul ? display none
+--        ul ? display none
+
+      "#rubricator" ? display inline
+
+      "#nav-left" # ":target" ? do
+        ".part-links" ? display block
+
+        
 
 mainCSS cfg = do
     importUrl "font-awesome.min.css"
@@ -182,9 +193,6 @@ mainCSS cfg = do
 
         nav <? debugBox cfg blue     -- DEBUG
 
-    
-
-
     header ? do
       debugBox cfg blue              -- DEBUG
 
@@ -219,7 +227,7 @@ mainCSS cfg = do
         paddingTop (Size.em 1.5)
         lineHeight (Size.em 1.2)
 
-        p <? do
+        p <? a ? do
           
           color blue
           fontWeight bold
@@ -242,6 +250,8 @@ mainCSS cfg = do
 
       "ul" <? li ? do
         alignItems flexEnd
+
+    "#rubricator" ? display none
 
 
 {- !!!

@@ -221,7 +221,8 @@ mainCSS cfg = do
       flexGrow 1
       flexShrink 1
 
-      sym padding (Size.em 1)
+      paddingLeft (Size.em 1)
+      paddingRight (Size.em 1)
       
       ul <? li <? do
         paddingTop (Size.em 1.5)
@@ -243,6 +244,8 @@ mainCSS cfg = do
           paddingTop (Size.em 0.5)
 
         debugBox cfg orange              -- DEBUG
+
+      ul <? li # ":first-child" ? paddingTop (px 0)
 
     
     "#nav-left" ? do

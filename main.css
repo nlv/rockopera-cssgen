@@ -156,10 +156,11 @@ nav a
 
 main > nav.parts-links
 {
-  flex-basis  : 25%;
-  flex-grow   : 1;
-  flex-shrink : 1;
-  padding     : 1em 1em 1em 1em;
+  flex-basis    : 25%;
+  flex-grow     : 1;
+  flex-shrink   : 1;
+  padding-left  : 1em;
+  padding-right : 1em;
 }
 
 
@@ -189,6 +190,12 @@ main > nav.parts-links > ul > li > ul > li
 main > nav.parts-links > ul > li > ul li:first-child
 {
   padding-top : 0.5em;
+}
+
+
+main > nav.parts-links > ul li:first-child
+{
+  padding-top : 0px;
 }
 
 #nav-left

@@ -186,6 +186,7 @@ mainCSS cfg = do
           section <? display none    -- DEBUG
           "#intro-video" ? display block -- DEBUG
           "#intro" ? display block -- DEBUG
+          "#protests" ? display block -- DEBUG
 
           flexBasis (pct 50)         
 
@@ -276,7 +277,6 @@ mainCSS cfg = do
         sym2 margin (Size.em 1) auto
 
       p ? do
---        sym2 margin (Size.em 1) 0
         sym2 margin (Size.em 1) auto
         textAlign justify
 
@@ -284,6 +284,31 @@ mainCSS cfg = do
 
     "#main-content" |> section # ":first-child" ? do
       marginTop (Size.em 0)
+
+    "#protests" |> figure ? do
+       display flex
+       justifyContent spaceBetween
+       alignItems stretch
+
+       figure ? do
+         flexGrow 1
+         flexBasis (pct 33.33)
+         position relative
+
+         paddingLeft (px 5)
+         paddingRight (px 5)
+
+         img ? do
+           width (pct 100)
+           height (pct 100)
+
+         figcaption ? do
+           position absolute
+           left (Size.em 0.5)
+           bottom (Size.em 0.5)
+           color lightgray
+           backgroundColor gray
+           sym padding (Size.em 0.25)
 
     
 
@@ -334,23 +359,6 @@ mainCSS cfg = do
 
 
     {- Карусель -}
-    ".carusel" ? do
-       display flex
-       justifyContent spaceBetween
-       alignItems stretch
-
-       marginTop (Size.em 2)
-
-       li ? do
-         flexGrow 1
-         flexBasis (pct 33.33)
-
-         paddingLeft (px 5)
-         paddingRight (px 5)
-
-         img ? do
-           width (pct 100)
-           height (pct 100)
 
     {- новости -}
     "#news" ? do

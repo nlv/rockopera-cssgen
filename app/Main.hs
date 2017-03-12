@@ -185,13 +185,13 @@ mainCSS cfg = do
           debugBox cfg black         -- DEBUG
           section <? display none    -- DEBUG
           "#intro-video" ? display block -- DEBUG
+          "#intro" ? display block -- DEBUG
 
           flexBasis (pct 50)         
 
-          section <? do
-            textAlign center
-
         nav <? debugBox cfg blue     -- DEBUG
+
+    "#intro-video" ? textAlign center
 
     header ? do
       debugBox cfg blue              -- DEBUG
@@ -255,6 +255,37 @@ mainCSS cfg = do
         alignItems flexEnd
 
     "#rubricator" ? display none
+
+    "#main-content" |> section ? do
+      marginTop (Size.em 4)
+
+--    "#main-content" |> section ? do
+    "#intro" ? do  
+--      marginTop (Size.em 2)
+      sym2 padding 0 (Size.em 1) 
+
+      textAlign center
+      lineHeight (Size.em 1.5)
+      maxWidth (px 600)
+      sym2 margin (Size.em 0) auto 
+
+      h1 ? do
+        textAlign center
+        fontWeight bold
+        fontSize (Size.em 1.5)
+        sym2 margin (Size.em 1) auto
+
+      p ? do
+--        sym2 margin (Size.em 1) 0
+        sym2 margin (Size.em 1) auto
+        textAlign justify
+
+      
+
+    "#main-content" |> section # ":first-child" ? do
+      marginTop (Size.em 0)
+
+    
 
 
 {- !!!

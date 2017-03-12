@@ -117,11 +117,16 @@ body > main > main #intro-video
   display : block;
 }
 
-body > main > main > section
+body > main > main #intro
+{
+  display : block;
+}
+
+
+#intro-video
 {
   text-align : center;
 }
-
 
 
 header > nav
@@ -212,6 +217,39 @@ main > nav.parts-links > ul li:first-child
 #rubricator
 {
   display : none;
+}
+
+#main-content > section
+{
+  margin-top : 4em;
+}
+
+#intro
+{
+  padding     : 0% 1em 0% 1em;
+  text-align  : center;
+  line-height : 1.5em;
+  max-width   : 600px;
+  margin      : 0em auto 0em auto;
+}
+
+#intro h1
+{
+  text-align  : center;
+  font-weight : bold;
+  font-size   : 1.5em;
+  margin      : 1em auto 1em auto;
+}
+
+#intro p
+{
+  margin     : 1em auto 1em auto;
+  text-align : justify;
+}
+
+#main-content > section:first-child
+{
+  margin-top : 0em;
 }
 
 @media all and (min-width: 1200px)

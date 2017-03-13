@@ -269,7 +269,7 @@ mainCSS cfg = do
 
       textAlign center
       lineHeight (Size.em 1.5)
-      maxWidth (px 600)
+      maxWidth (px 700)
       sym2 margin (Size.em 0) auto 
 
       typo
@@ -316,6 +316,15 @@ mainCSS cfg = do
            sym padding (Size.em 0.25)
 
     "#news" ? do
+      maxWidth (px 700)
+      marginLeft auto
+      marginRight auto
+
+      h1 ? do
+        fontWeight bold
+        fontSize (Size.em 1.2)
+        sym2 margin (Size.em 1) auto
+        textAlign center
 
 
       article ? do

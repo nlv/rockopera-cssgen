@@ -183,10 +183,12 @@ mainCSS cfg = do
         
         main_ <? do
           debugBox cfg black         -- DEBUG
+          {-
           section <? display none    -- DEBUG
           "#intro-video" ? display block -- DEBUG
           "#intro" ? display block -- DEBUG
           "#protests" ? display block -- DEBUG
+          -}
 
           flexBasis (pct 50)         
 
@@ -270,6 +272,8 @@ mainCSS cfg = do
       maxWidth (px 600)
       sym2 margin (Size.em 0) auto 
 
+      typo
+{-
       h1 ? do
         textAlign center
         fontWeight bold
@@ -279,6 +283,7 @@ mainCSS cfg = do
       p ? do
         sym2 margin (Size.em 1) auto
         textAlign justify
+        -}
 
       
 
@@ -310,102 +315,72 @@ mainCSS cfg = do
            backgroundColor gray
            sym padding (Size.em 0.25)
 
-    
-
-
-{- !!!
-
-    {-- основные разделы --}
-    "#main" ? do
-      display flex
-      justifyContent spaceAround
-
-      marginTop (mainSectionTopMargin cfg)
-
-      nav ? do
-        debugBox cfg blue
-        maxWidth (pct 25)
-
---        flexGrow 1
-        sym padding (mainSectionsPadding cfg)
-
-      "#content" ? do
-        debugBox cfg blue
-
-        -- marginLeft auto
-        maxWidth (px 600)
-        textAlign center
-
-        flexGrow $ mainContentWidthRatio cfg
-        sym padding (mainSectionsPadding cfg)
-
-        lineHeight $ unitless 1.6
-
-
-      {- Типографика -}
-      "#content" ? p ? do
-        marginTop $ pMargin cfg
-
-        textAlign justify
-
-      Elements.div # ".iframe" ? do
-        debugBox cfg red
-
-      article ? header ? do
-        fontSize (Size.em 1.4)
-        textAlign (alignSide sideCenter)
-        fontWeight bold
-        marginTop $ pMargin cfg
-
-
-    {- Карусель -}
-
-    {- новости -}
     "#news" ? do
 
+
       article ? do
+        fontSize (Size.rem 0.9)
         border solid (px 1) black
         display flex
+        flexDirection column
 
         marginTop (Size.em 2)
         marginBottom (Size.em 2)
 
         sym padding (px 5)
 
-        ".logo" ? do
-          display flex
-          flexDirection column
---        alignItems stretch
+        figure ? do
+          float floatLeft
+          maxWidth (pct 25)
+          sym padding (Size.em 1)
+          
+          img ? maxWidth (pct 100)
 
-          Elements.div # ".date" ? do
-            textAlign start
-            fontSize (Size.em 0.8)
-
-        section # ".title" ? do
+        hgroup ? do
+          paddingTop (Size.em 1)
           textAlign justify
+          lineHeight (Size.em 1.5)
+
 
           h1 ? do
             fontWeight bold
-            lineHeight (Size.em 1.2)
+            fontSize (Size.em 1.2)
+            sym2 margin (Size.em 1) auto
+            textAlign justify
 
           h2 ? do
-            marginTop (Size.em 1)
-            fontSize (Size.em 0.8)
-            lineHeight (Size.em 1.2)
+            sym2 margin (Size.em 1) auto
 
+        footer ? do
+          width (pct 100)
 
+          time ? do
+            float floatLeft
+            sym margin (px 10)
 
+          ul ? do
+            width (pct 100)
 
-      ".photo" ? do
---        float floatLeft
---        width (pct 25)
-        sym padding (px 5)
+            li ? do
+              display inlineBlock
+              float floatRight
+              sym margin (px 10)
+              sym padding (px 4)
 
-      ".photo" ? img ? do
-        width (pct 100)
---}
---
+              backgroundColor lemonchiffon
+              sym borderRadius (px 4)
+
      
+typo = do
+      h1 ? do
+        textAlign center
+        fontWeight bold
+        fontSize (Size.em 1.5)
+        sym2 margin (Size.em 1) auto
+
+      p ? do
+        sym2 margin (Size.em 1) auto
+        textAlign justify
 
 debugIt cfg action  = if (debug cfg) then action else return ()
 

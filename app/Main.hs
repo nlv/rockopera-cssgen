@@ -37,7 +37,7 @@ mainCSS cfg = do
       maxWidth (px 700)
       sym2 margin (Size.em 0) auto 
 
-      h1 ? do
+      h1 <? do
         textAlign center
         fontWeight bold
         fontSize (Size.em 1.5)
@@ -84,13 +84,16 @@ mainCSS cfg = do
       h1 ? do
         fontWeight bold
         fontSize (Size.em 1.2)
-        sym2 margin (Size.em 1) auto
+        margin (Size.em 1) auto (Size.em 0.5) auto 
         textAlign center
+
+      article #  ":nth-of-type(1)" ? do
+        marginTop (px 0)
 
 
       article ? do
         fontSize (Size.rem 0.9)
-        border solid (px 1) black
+--        border solid (px 1) black
         display flex
         flexDirection column
 
@@ -115,7 +118,7 @@ mainCSS cfg = do
           h1 ? do
             fontWeight bold
             fontSize (Size.em 1.2)
-            sym2 margin (Size.em 1) auto
+            sym2 margin (Size.em 0) auto
             textAlign justify
 
           h2 ? do

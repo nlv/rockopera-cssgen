@@ -58,7 +58,7 @@ data Config = Config {
 defaultConfig  = Config {
               debug = False
              ,rootFontSizeOther = 15
-             ,rootFontSizeLarge = 17
+             ,rootFontSizeLarge = 19
              {-
              ,topMenuCount = 8
              ,mainContentWidthRatio = 4
@@ -184,16 +184,17 @@ commonCSS cfg = do
       display flex
       flexDirection column
 
-      debugBox cfg red       -- DEBUG
+--      debugBox cfg red       -- DEBUG
 
       main_ <? do
         display flex
-        justifyContent center
+        justifyContent spaceBetween
+        alignItems flexStart
 
-        debugBox cfg green   -- DEBUG
+--        debugBox cfg green   -- DEBUG
         
         main_ <? do
-          debugBox cfg black         -- DEBUG
+--          debugBox cfg black         -- DEBUG
           {-
           section <? display none    -- DEBUG
           "#intro-video" ? display block -- DEBUG
@@ -205,42 +206,43 @@ commonCSS cfg = do
 
         nav <? debugBox cfg blue     -- DEBUG
 
-    header ? do
-      debugBox cfg blue              -- DEBUG
+      header <? do
+        debugBox cfg blue              -- DEBUG
+        sym2 padding (Size.em 2) 0
 
-      nav <? do
-        display flex
-        justifyContent center
-
-        ul <? do
+        nav <? do
           display flex
-          flexWrap Flexbox.wrap
           justifyContent center
 
-          li ? do
-            a ? fontWeight bold
-            sym2 padding (Size.rem 1) (Size.rem 2)
+          ul <? do
+            display flex
+            flexWrap Flexbox.wrap
+            justifyContent center
+
+            li ? do
+              a ? fontWeight bold
+              sym2 padding (Size.rem 1) (Size.rem 2)
       
-    nav ? a ? do
-        textDecoration none
-        color black
+          a ? do
+            textDecoration none
+            color black
 
-    main_ |> nav # ".parts-links" ? do
-      debugBox cfg yellow             -- DEBUG
-      maxWidth (px 500)
+    ".parts-links" ? do
+      maxWidth (px 300)
+      marginLeft (Size.em 3)
+      marginRight (Size.em 3)
+      sym padding  (Size.em 0.5)
 
---      flexBasis (pct 25)
---      flexGrow 1
---      flexShrink 1
+      backgroundColor gainsboro
+      backgroundColor whitesmoke
 
-      paddingLeft (Size.em 1)
-      paddingRight (Size.em 1)
       
       ul <? li <? do
         paddingTop (Size.em 1.5)
         lineHeight (Size.em 1.2)
 
         p <? a ? do
+          textDecoration none
           
           color blue
           fontWeight bold
@@ -255,21 +257,29 @@ commonCSS cfg = do
         ul <? li # ":first-child" ? do
           paddingTop (Size.em 0.5)
 
-        debugBox cfg orange              -- DEBUG
+--        debugBox cfg orange              -- DEBUG
 
       ul <? li # ":first-child" ? paddingTop (px 0)
 
     
     "#nav-left" ? do
-      textAlign (alignSide sideRight)
+--      textAlign (alignSide sideRight)
 
       "ul" <? li ? do
         alignItems flexEnd
 
     "#rubricator" ? display none
 
-    "#main-content" |> section ? do
-      marginTop (Size.em 4)
+    "#main-content" ? do
+      backgroundColor gainsboro
+      backgroundColor ghostwhite
+      backgroundColor whitesmoke
+      --paddingLeft (Size.em 1)
+      --paddingRight (Size.em 1)
+      sym2 padding  (Size.em 1) (Size.em 2)
+
+      section <? do
+        marginTop (Size.em 4)
 
     largeDesktopCSS cfg
     mediumDesktopCSS cfg

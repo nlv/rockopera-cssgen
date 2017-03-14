@@ -99,7 +99,8 @@ body
 body > main
 {
   display         : flex;
-  justify-content : center;
+  justify-content : space-between;
+  align-items     : flex-start;
 }
 
 body > main > main
@@ -108,54 +109,61 @@ body > main > main
 }
 
 
+body > header
+{
+  padding : 2em 0% 2em 0%;
+}
 
-header > nav
+body > header > nav
 {
   display         : flex;
   justify-content : center;
 }
 
-header > nav > ul
+body > header > nav > ul
 {
   display         : flex;
   flex-wrap       : wrap;
   justify-content : center;
 }
 
-header > nav > ul li
+body > header > nav > ul li
 {
   padding : 1rem 2rem 1rem 2rem;
 }
 
-header > nav > ul li a
+body > header > nav > ul li a
 {
   font-weight : bold;
 }
 
-
-nav a
+body > header > nav a
 {
   text-decoration : none;
   color           : #000000;
 }
 
-main > nav.parts-links
+.parts-links
 {
-  max-width     : 500px;
-  padding-left  : 1em;
-  padding-right : 1em;
+  max-width        : 300px;
+  margin-left      : 3em;
+  margin-right     : 3em;
+  padding          : 0.5em 0.5em 0.5em 0.5em;
+  background-color : #dcdcdc;
+  background-color : #f5f5f5;
 }
 
 
-main > nav.parts-links > ul > li
+.parts-links > ul > li
 {
   padding-top : 1.5em;
   line-height : 1.19999em;
 }
 
 
-main > nav.parts-links > ul > li > p a
+.parts-links > ul > li > p a
 {
+  text-decoration     : none;
   color               : #0000ff;
   font-weight         : bold;
   border-bottom-color : #0000ff;
@@ -164,27 +172,23 @@ main > nav.parts-links > ul > li > p a
 }
 
 
-main > nav.parts-links > ul > li > ul > li
+.parts-links > ul > li > ul > li
 {
   padding-top : 0.8em;
 }
 
 
-main > nav.parts-links > ul > li > ul li:first-child
+.parts-links > ul > li > ul li:first-child
 {
   padding-top : 0.5em;
 }
 
 
-main > nav.parts-links > ul li:first-child
+.parts-links > ul li:first-child
 {
   padding-top : 0px;
 }
 
-#nav-left
-{
-  text-align : right;
-}
 
 
 #nav-left > ul li
@@ -195,6 +199,14 @@ main > nav.parts-links > ul li:first-child
 #rubricator
 {
   display : none;
+}
+
+#main-content
+{
+  background-color : #dcdcdc;
+  background-color : #f8f8ff;
+  background-color : #f5f5f5;
+  padding          : 1em 2em 1em 2em;
 }
 
 #main-content > section
@@ -216,7 +228,7 @@ main > nav.parts-links > ul li:first-child
   margin      : 0em auto 0em auto;
 }
 
-#intro h1
+#intro > h1
 {
   text-align  : center;
   font-weight : bold;
@@ -278,14 +290,18 @@ main > nav.parts-links > ul li:first-child
 {
   font-weight : bold;
   font-size   : 1.19999em;
-  margin      : 1em auto 1em auto;
+  margin      : 1em auto 0.5em auto;
   text-align  : center;
+}
+
+#news article:nth-of-type(1)
+{
+  margin-top : 0px;
 }
 
 #news article
 {
   font-size      : 0.9rem;
-  border         : solid 1px #000000;
   display        : flex;
   flex-direction : column;
   margin-top     : 2em;
@@ -316,7 +332,7 @@ main > nav.parts-links > ul li:first-child
 {
   font-weight : bold;
   font-size   : 1.19999em;
-  margin      : 1em auto 1em auto;
+  margin      : 0em auto 0em auto;
   text-align  : justify;
 }
 

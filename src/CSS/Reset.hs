@@ -5,9 +5,12 @@ module CSS.Reset (
 
 import Clay
 import Data.Monoid
-import CSS.Common
 
 import Prelude hiding (div, span)
+
+zero = px 0
+
+inheritFont = Required inherit Nothing [] []
 
 reset = do
     elements ? do

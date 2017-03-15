@@ -294,26 +294,24 @@ body > header > nav a
   text-align  : center;
 }
 
-#news article:nth-of-type(1)
-{
-  margin-top : 0px;
-}
-
 #news article
 {
   font-size      : 0.9rem;
+  border-bottom  : solid 1px #000000;
   display        : flex;
   flex-direction : column;
-  margin-top     : 2em;
-  margin-bottom  : 2em;
-  padding        : 5px 5px 5px 5px;
+  padding-left   : 5px;
+  padding-right  : 5px;
+  padding-top    : 2.5em;
+  padding-bottom : 2.5em;
 }
 
 #news article figure
 {
-  float     : left;
-  max-width : 25%;
-  padding   : 1em 1em 1em 1em;
+  float         : left;
+  max-width     : 25%;
+  padding-left  : 1em;
+  padding-right : 1em;
 }
 
 #news article figure img
@@ -323,7 +321,6 @@ body > header > nav a
 
 #news article hgroup
 {
-  padding-top : 1em;
   text-align  : justify;
   line-height : 1.5em;
 }
@@ -336,6 +333,11 @@ body > header > nav a
   text-align  : justify;
 }
 
+#news article hgroup h1 a
+{
+  text-decoration : none;
+}
+
 #news article hgroup h2
 {
   margin : 1em auto 1em auto;
@@ -343,28 +345,37 @@ body > header > nav a
 
 #news article footer
 {
-  width : 100%;
+  line-height : 1.19999em;
+  width       : 100%;
 }
 
 #news article footer time
 {
-  float  : left;
-  margin : 10px 10px 10px 10px;
+  margin  : 0px 10px 0px 10px;
+  display : inline-block;
 }
 
 #news article footer ul
 {
-  width : 100%;
+  display       : flex;
+  flex-wrap     : wrap;
+  align-content : space-between;
 }
 
 #news article footer ul li
 {
   display          : inline-block;
-  float            : right;
-  margin           : 10px 10px 10px 10px;
+  margin-top       : 10px;
+  margin-left      : 10px;
+  margin-right     : 10px;
   padding          : 4px 4px 4px 4px;
   background-color : #fffacd;
   border-radius    : 4px 4px 4px 4px;
+}
+
+#news article footer ul li:last-child
+{
+  margin-right : 0px;
 }
 
 @media all and (min-width: 1200px)

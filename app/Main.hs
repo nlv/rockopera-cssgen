@@ -87,30 +87,34 @@ mainCSS cfg = do
         margin (Size.em 1) auto (Size.em 0.5) auto 
         textAlign center
 
-      article #  ":nth-of-type(1)" ? do
-        marginTop (px 0)
+--      article #  ":nth-of-type(1)" ? do
+--        paddingTop (px 0)
 
 
       article ? do
         fontSize (Size.rem 0.9)
---        border solid (px 1) black
+        borderBottom solid (px 1) black
         display flex
         flexDirection column
 
-        marginTop (Size.em 2)
-        marginBottom (Size.em 2)
+--        marginTop (Size.em 1.5)
 
-        sym padding (px 5)
+        paddingLeft (px 5)
+        paddingRight (px 5)
+        paddingTop (Size.em 2.5)
+        paddingBottom (Size.em 2.5)
 
         figure ? do
           float floatLeft
           maxWidth (pct 25)
-          sym padding (Size.em 1)
+          paddingLeft (Size.em 1)
+          paddingRight (Size.em 1)
+ --         sym padding (Size.em 1)
           
           img ? maxWidth (pct 100)
 
         hgroup ? do
-          paddingTop (Size.em 1)
+--          paddingTop (Size.em 1)
           textAlign justify
           lineHeight (Size.em 1.5)
 
@@ -120,26 +124,48 @@ mainCSS cfg = do
             fontSize (Size.em 1.2)
             sym2 margin (Size.em 0) auto
             textAlign justify
+            
+            a ? textDecoration none
 
           h2 ? do
             sym2 margin (Size.em 1) auto
 
         footer ? do
+          lineHeight (Size.em 1.2)
           width (pct 100)
+--          display flex
 
           time ? do
-            float floatLeft
-            sym margin (px 10)
+            sym2 margin (px 0) (px 10)
+            display inlineBlock
+--            flexShrink 1
+--
+
 
           ul ? do
-            width (pct 100)
+--            float floatRight
+--            flexShrink 4
+            display flex
+            flexWrap Flexbox.wrap
+            alignContent spaceBetween
+--            sym2 margin (px 0) (px 10)
 
             li ? do
               display inlineBlock
-              float floatRight
-              sym margin (px 10)
+--              float floatRight
+--              sym2 margin (Size.em 1.2) (px 10)
+--              marginTop (Size.em 1)
+              marginTop (Size.px 10)
+              marginLeft (px 10)
+              marginRight (px 10)
               sym padding (px 4)
 
               backgroundColor lemonchiffon
               sym borderRadius (px 4)
+
+--            li # ":first-child" ? do
+--              marginLeft (px 0)
+
+            li # ":last-child" ? do
+              marginRight (px 0)
 

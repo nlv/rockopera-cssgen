@@ -195,13 +195,6 @@ commonCSS cfg = do
         
         main_ <? do
 --          debugBox cfg black         -- DEBUG
-          {-
-          section <? display none    -- DEBUG
-          "#intro-video" ? display block -- DEBUG
-          "#intro" ? display block -- DEBUG
-          "#protests" ? display block -- DEBUG
-          -}
-
           flexBasis (pct 50)         
 
         nav <? debugBox cfg blue     -- DEBUG
@@ -211,8 +204,10 @@ commonCSS cfg = do
         sym2 padding (Size.em 2) 0
 
         nav <? do
+          fontSize (Size.rem 1.2)
           display flex
           justifyContent center
+          backgroundColor lightgray
 
           ul <? do
             display flex
@@ -229,8 +224,6 @@ commonCSS cfg = do
 
     ".parts-links" ? do
       maxWidth (px 300)
-      marginLeft (Size.em 3)
-      marginRight (Size.em 3)
       sym padding  (Size.em 0.5)
 
       backgroundColor gainsboro
@@ -261,9 +254,11 @@ commonCSS cfg = do
 
       ul <? li # ":first-child" ? paddingTop (px 0)
 
+    "#nav-right" ? do
+      marginLeft (Size.em 2)
     
     "#nav-left" ? do
---      textAlign (alignSide sideRight)
+      marginRight (Size.em 2)
 
       "ul" <? li ? do
         alignItems flexEnd
@@ -271,11 +266,7 @@ commonCSS cfg = do
     "#rubricator" ? display none
 
     "#main-content" ? do
-      backgroundColor gainsboro
-      backgroundColor ghostwhite
       backgroundColor whitesmoke
-      --paddingLeft (Size.em 1)
-      --paddingRight (Size.em 1)
       sym2 padding  (Size.em 1) (Size.em 2)
 
       section <? do

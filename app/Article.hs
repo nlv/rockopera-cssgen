@@ -48,10 +48,11 @@ mainCSS cfg = do
       lineHeight (Size.em 1.5)
 
       h1 ? do
-        textAlign center
+ --       textAlign center
         fontWeight bold
         fontSize (Size.em 1.5)
         sym2 margin (Size.em 1) auto
+        lineHeight (Size.em 1.1)
 
       h2 ? do
         textAlign justify

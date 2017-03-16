@@ -72,10 +72,10 @@ defaultConfig  = Config {
              }
 
 largeDesktop :: Css -> Css
-largeDesktop = query Clay.all [Media.minWidth 1200]
+largeDesktop = query Clay.all [Media.minWidth 1400]
 
 mediumDesktop :: Css -> Css
-mediumDesktop = query Clay.all [Media.minWidth 992, Media.maxWidth 1199]
+mediumDesktop = query Clay.all [Media.minWidth 992, Media.maxWidth 1399]
 
 smallDesktop :: Css -> Css
 smallDesktop = query Clay.all [Media.minWidth 768, Media.maxWidth 991]
@@ -92,11 +92,25 @@ largeDesktopCSS cfg = largeDesktop $ do
     ".video-large" ? display inline
     ".video-medium" ? display none
 
+{-
+    ".video-large" ? do
+              borderStyle solid
+              borderColor red
+              borderWidth (px 5)
+-}
+
 mediumDesktopCSS cfg = mediumDesktop $ do
     html ? fontSize (px 15)
 
     ".video-large" ? display none
     ".video-medium" ? display inline
+
+{-
+    ".video-medium" ? do
+              borderStyle solid
+              borderColor green
+              borderWidth (px 5)
+              -}
 
 smallDesktopCSS cfg = smallDesktop $ do
     html ? fontSize (px 15)
@@ -241,15 +255,17 @@ commonCSS cfg = do
           fontWeight bold
 
         ul <? li <? do
---          lineHeight (Size.em 1.5)
           paddingTop (Size.em 0.4)
 
---        ul <? li # ":first-child" ? do
---          paddingTop (Size.em 0.5)
+          a ? do
+            textDecoration none
+            color black
 
---        debugBox cfg orange              -- DEBUG
+          a # ":hover" ? do
+            color steelblue
 
---      ul <? li # ":first-child" ? paddingTop (px 0)
+      ul # ".first-child" <? li  <? do
+        paddingTop (Size.em 1)
 
     "#nav-right" ? do
       marginLeft (Size.em 2)

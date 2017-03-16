@@ -174,6 +174,23 @@ body > header > nav a
   padding-top : 0.4em;
 }
 
+.parts-links > ul > li > ul > li a
+{
+  text-decoration : none;
+  color           : #000000;
+}
+
+.parts-links > ul > li > ul > li a:hover
+{
+  color : #4682b4;
+}
+
+
+.parts-links > ul.first-child > li
+{
+  padding-top : 1em;
+}
+
 #nav-right
 {
   margin-left : 2em;
@@ -215,10 +232,10 @@ body > header > nav a
 
 #main-content h1
 {
-  text-align  : center;
   font-weight : bold;
   font-size   : 1.5em;
   margin      : 1em auto 1em auto;
+  line-height : 1.1em;
 }
 
 #main-content h2
@@ -252,7 +269,7 @@ body > header > nav a
   margin : 10px 10px 10px 10px;
 }
 
-@media all and (min-width: 1200px)
+@media all and (min-width: 1400px)
 {
 
 html
@@ -271,7 +288,7 @@ html
 }
 
 }
-@media all and (min-width: 992px) and (max-width: 1199px)
+@media all and (min-width: 992px) and (max-width: 1399px)
 {
 
 html

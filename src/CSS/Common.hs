@@ -240,19 +240,16 @@ commonCSS cfg = do
           color blue
           fontWeight bold
 
-          borderBottomColor blue
-          borderBottomStyle solid
-          borderBottomWidth (px 1)
-
         ul <? li <? do
-          paddingTop (Size.em 0.8)
+--          lineHeight (Size.em 1.5)
+          paddingTop (Size.em 0.4)
 
-        ul <? li # ":first-child" ? do
-          paddingTop (Size.em 0.5)
+--        ul <? li # ":first-child" ? do
+--          paddingTop (Size.em 0.5)
 
 --        debugBox cfg orange              -- DEBUG
 
-      ul <? li # ":first-child" ? paddingTop (px 0)
+--      ul <? li # ":first-child" ? paddingTop (px 0)
 
     "#nav-right" ? do
       marginLeft (Size.em 2)

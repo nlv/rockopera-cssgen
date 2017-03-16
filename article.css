@@ -163,30 +163,15 @@ body > header > nav a
 
 .parts-links > ul > li > p a
 {
-  text-decoration     : none;
-  color               : #0000ff;
-  font-weight         : bold;
-  border-bottom-color : #0000ff;
-  border-bottom-style : solid;
-  border-bottom-width : 1px;
+  text-decoration : none;
+  color           : #0000ff;
+  font-weight     : bold;
 }
 
 
 .parts-links > ul > li > ul > li
 {
-  padding-top : 0.8em;
-}
-
-
-.parts-links > ul > li > ul li:first-child
-{
-  padding-top : 0.5em;
-}
-
-
-.parts-links > ul li:first-child
-{
-  padding-top : 0px;
+  padding-top : 0.4em;
 }
 
 #nav-right

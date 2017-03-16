@@ -90,6 +90,8 @@ mainCSS cfg = do
 --      article #  ":nth-of-type(1)" ? do
 --        paddingTop (px 0)
 
+      article # ":last-child" ? borderBottom solid (px 0) black
+--      article # ":last-child" ? borderBottom none
 
       article ? do
         fontSize (Size.rem 0.9)

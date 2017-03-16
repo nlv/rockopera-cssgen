@@ -242,9 +242,17 @@ commonCSS cfg = do
         width (pct 100)
         backgroundColor gray
         display flex
-        justifyContent spaceAround
         sym2 padding (Size.em 1) 0
         lineHeight (Size.em 1.5)
+
+{-
+      footer <? do
+        justifyContent spaceAround
+        -}
+      footer <? do
+        justifyContent center
+
+        section <? sym2 margin 0 (px 100)
 
         a ? do
           textDecoration none

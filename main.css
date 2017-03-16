@@ -151,9 +151,18 @@ body > footer
   width            : 100%;
   background-color : #808080;
   display          : flex;
-  justify-content  : space-around;
   padding          : 1em 0% 1em 0%;
   line-height      : 1.5em;
+}
+
+body > footer
+{
+  justify-content : center;
+}
+
+body > footer > section
+{
+  margin : 0px 100px 0px 100px;
 }
 
 body > footer a
@@ -318,6 +327,11 @@ body > footer a
   font-size   : 1.19999em;
   margin      : 1em auto 0.5em auto;
   text-align  : center;
+}
+
+#news article:last-child
+{
+  border-bottom : solid 0px #000000;
 }
 
 #news article

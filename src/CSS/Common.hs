@@ -205,6 +205,8 @@ commonCSS cfg = do
         justifyContent spaceBetween
         alignItems flexStart
 
+        marginBottom (Size.em 2)
+
 --        debugBox cfg green   -- DEBUG
         
         main_ <? do
@@ -235,6 +237,18 @@ commonCSS cfg = do
           a ? do
             textDecoration none
             color black
+
+      footer <? do
+        width (pct 100)
+        backgroundColor gray
+        display flex
+        justifyContent spaceAround
+        sym2 padding (Size.em 1) 0
+        lineHeight (Size.em 1.5)
+
+        a ? do
+          textDecoration none
+
 
     ".parts-links" ? do
       maxWidth (px 300)
@@ -281,9 +295,12 @@ commonCSS cfg = do
     "#main-content" ? do
       backgroundColor whitesmoke
       sym2 padding  (Size.em 1) (Size.em 2)
+      alignSelf stretch
 
       section <? do
         marginTop (Size.em 4)
+
+
 
     largeDesktopCSS cfg
     mediumDesktopCSS cfg

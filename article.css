@@ -101,6 +101,7 @@ body > main
   display         : flex;
   justify-content : space-between;
   align-items     : flex-start;
+  margin-bottom   : 2em;
 }
 
 body > main > main
@@ -143,6 +144,21 @@ body > header > nav a
 {
   text-decoration : none;
   color           : #000000;
+}
+
+body > footer
+{
+  width            : 100%;
+  background-color : #808080;
+  display          : flex;
+  justify-content  : space-around;
+  padding          : 1em 0% 1em 0%;
+  line-height      : 1.5em;
+}
+
+body > footer a
+{
+  text-decoration : none;
 }
 
 .parts-links
@@ -216,6 +232,7 @@ body > header > nav a
 {
   background-color : #f5f5f5;
   padding          : 1em 2em 1em 2em;
+  align-self       : stretch;
 }
 
 #main-content > section

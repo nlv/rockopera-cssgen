@@ -257,6 +257,39 @@ blockquote.poem
   margin-left : 2em;
 }
 
+
+#main-content figure.citation
+{
+  line-height      : 1.5em;
+  font-size        : 1.19999em;
+  font-family      : "Bad Script", serif;
+  font-style       : italic;
+  margin-top       : 1.5em;
+  margin-bottom    : 1.5em;
+  margin-left      : -2.5em;
+  margin-right     : -2.5em;
+  padding          : 1.5em 1em 1.5em 1em;
+  text-indent      : 2em;
+  background-color : #d3d3d3;
+}
+
+#main-content figure.citation > blockquote
+{
+  text-align : justify;
+}
+
+#main-content figure.citation > blockquote p:first-child
+{
+  margin-top : 0px;
+}
+
+#main-content figure.citation > figcaption
+{
+  margin-top  : 1em;
+  text-align  : end;
+  font-weight : bold;
+}
+
 ul.keywords
 {
   display       : flex;

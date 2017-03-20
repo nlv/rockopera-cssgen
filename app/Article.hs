@@ -46,7 +46,32 @@ mainCSS cfg = do
         fontStyle italic
         marginTop (Size.em 1)
         marginLeft (Size.em 2)
+        
 
+    "#main-content" ? figure # ".citation" ? do
+        lineHeight (Size.em 1.5)
+        fontSize (Size.em 1.2)
+        fontFamily ["Bad Script"] [serif]
+        fontStyle italic
+        marginTop (Size.em 1.5)
+        marginBottom (Size.em 1.5)
+        marginLeft (Size.em (-2.5))
+        marginRight (Size.em (-2.5))
+        sym2 padding (Size.em 1.5) (Size.em 1)
+        textIndent $ indent (Size.em 2)
+
+        backgroundColor lightgray
+      
+        blockquote <? do
+          textAlign justify
+          
+          p # ":first-child" ? do
+            marginTop (px 0)
+
+        figcaption <? do
+          marginTop (Size.em 1)
+          textAlign end
+          fontWeight bold
 
     ul # ".keywords" ? do
   --            float floatRight

@@ -1,6 +1,7 @@
 
 @import url(font-awesome.min.css);
 @import url(http://fonts.googleapis.com/css?family=Roboto Slab:100,100italic,300,300italic,400,400italic);
+@import url(http://fonts.googleapis.com/css?family=Bad Script:100,100italic,300,300italic,400,400italic);
 a,
 abbr,
 acronym,
@@ -99,14 +100,14 @@ body
 body > main
 {
   display         : flex;
-  justify-content : space-between;
+  justify-content : space-around;
   align-items     : flex-start;
   margin-bottom   : 2em;
 }
 
 body > main > main
 {
-  flex-basis : 50%;
+  width : 50%;
 }
 
 
@@ -173,8 +174,8 @@ body > footer a
 .parts-links
 {
   max-width        : 300px;
+  width            : 25%;
   padding          : 0.5em 0.5em 0.5em 0.5em;
-  background-color : #dcdcdc;
   background-color : #f5f5f5;
 }
 

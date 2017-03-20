@@ -42,8 +42,42 @@ main = putCss $ do
 
 mainCSS cfg = do
 
+    blockquote # ".poem" ? do
+        fontStyle italic
+        marginTop (Size.em 1)
+        marginLeft (Size.em 2)
+
+
+    ul # ".keywords" ? do
+  --            float floatRight
+  --            flexShrink 4
+      display flex
+      flexWrap Flexbox.wrap
+      alignContent spaceBetween
+  --            sym2 margin (px 0) (px 10)
+
+      li ? do
+        display inlineBlock
+  --              float floatRight
+  --              sym2 margin (Size.em 1.2) (px 10)
+  --              marginTop (Size.em 1)
+        marginTop (Size.px 10)
+        marginLeft (px 10)
+        marginRight (px 10)
+        sym padding (px 4)
+
+        backgroundColor lemonchiffon
+        sym borderRadius (px 4)
+
+  --            li # ":first-child" ? do
+  --              marginLeft (px 0)
+
+      li # ":last-child" ? do
+        marginRight (px 0)
+
     "#main-content"  ? do
       maxWidth (px 700)
+      width (pct 60)
       marginTop (Size.em 0)
       lineHeight (Size.em 1.5)
 
@@ -70,11 +104,81 @@ mainCSS cfg = do
         fontWeight bold
         fontStyle italic
 
-      Elements.em ? fontStyle italic
+      Elements.em ? do
+        fontStyle italic
+        fontFamily ["Bad Script"] [serif]
+--        backgroundColor lightgray
 
       figure ? do
         float floatLeft
         sym margin (px 10)
+
+    aside <? do
+      maxWidth (px 300)
+      width (pct 25)
+      marginLeft (Size.em 2)
+      marginRight (Size.em 2)
+
+      img # ".icon" ? do
+        display inline
+        width (Size.em 2)
+        sym padding (px 2)
+        verticalAlign middle
+
+
+      section <? do
+        backgroundColor whitesmoke
+        sym padding  (Size.em 0.5)
+        marginTop (Size.em 2)
+
+        h1 ? do
+          display none
+   --       textAlign center
+          fontWeight bold
+--          sym2 margin (Size.em 1) auto
+--          lineHeight (Size.em 1.1)
+
+        ul # ".inline" <? do
+          display flex
+          justifyContent spaceAround
+          flexWrap Flexbox.wrap
+
+
+        ul <? li <? do
+          paddingTop (Size.em 0.5)
+          lineHeight (Size.em 1.2)
+
+          p <? a ? do
+            textDecoration none
+            
+            color blue
+            fontWeight bold
+
+          ul <? li <? do
+            paddingTop (Size.em 0.4)
+
+            a ? do
+              textDecoration none
+              color black
+
+            a # ":hover" ? do
+              color steelblue
+
+        ul # ".first-child" <? li  <? do
+          paddingTop (Size.em 1)
+
+
+{-
+    footer <? do
+      maxWidth (px 700)
+      width (pct 60)
+      alignSelf center
+      justifyContent spaceAround
+      sym padding (px 0)
+      sym margin (px 0)
+      -}
+
+
 
 
 

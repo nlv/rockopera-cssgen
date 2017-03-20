@@ -184,6 +184,7 @@ bodyColumnDirection = do
 commonCSS cfg = do
     importUrl "font-awesome.min.css"
     importUrl "http://fonts.googleapis.com/css?family=Roboto Slab:100,100italic,300,300italic,400,400italic"
+    importUrl "http://fonts.googleapis.com/css?family=Bad Script:100,100italic,300,300italic,400,400italic"
 
     html ? do
       boxSizing borderBox
@@ -202,7 +203,8 @@ commonCSS cfg = do
 
       main_ <? do
         display flex
-        justifyContent spaceBetween
+--        justifyContent spaceBetween
+        justifyContent spaceAround
         alignItems flexStart
 
         marginBottom (Size.em 2)
@@ -211,7 +213,7 @@ commonCSS cfg = do
         
         main_ <? do
 --          debugBox cfg black         -- DEBUG
-          flexBasis (pct 50)         
+          width (pct 50)         
 
         nav <? debugBox cfg blue     -- DEBUG
 
@@ -260,9 +262,9 @@ commonCSS cfg = do
 
     ".parts-links" ? do
       maxWidth (px 300)
+      width (pct 25)
       sym padding  (Size.em 0.5)
 
-      backgroundColor gainsboro
       backgroundColor whitesmoke
 
       

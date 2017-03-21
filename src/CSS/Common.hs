@@ -186,6 +186,24 @@ commonCSS cfg = do
     importUrl "http://fonts.googleapis.com/css?family=Roboto Slab:100,100italic,300,300italic,400,400italic"
     importUrl "http://fonts.googleapis.com/css?family=Bad Script:100,100italic,300,300italic,400,400italic"
 
+    ul # ".keywords" ? do 
+      display flex
+      flexWrap Flexbox.wrap
+      alignContent spaceBetween
+
+      li ? do 
+        display inlineBlock
+        marginTop (Size.px 10)
+        marginLeft (px 10)
+        marginRight (px 10)
+        sym padding (px 4)
+
+        backgroundColor lemonchiffon
+        sym borderRadius (px 4)
+
+      li # ":last-child" ? do 
+        marginRight (px 0)
+
     html ? do
       boxSizing borderBox
 
@@ -200,6 +218,7 @@ commonCSS cfg = do
       flexDirection column
 
 --      debugBox cfg red       -- DEBUG
+
 
       main_ <? do
         display flex

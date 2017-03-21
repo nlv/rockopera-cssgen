@@ -73,33 +73,6 @@ mainCSS cfg = do
           textAlign end
           fontWeight bold
 
-    ul # ".keywords" ? do
-  --            float floatRight
-  --            flexShrink 4
-      display flex
-      flexWrap Flexbox.wrap
-      alignContent spaceBetween
-  --            sym2 margin (px 0) (px 10)
-
-      li ? do
-        display inlineBlock
-  --              float floatRight
-  --              sym2 margin (Size.em 1.2) (px 10)
-  --              marginTop (Size.em 1)
-        marginTop (Size.px 10)
-        marginLeft (px 10)
-        marginRight (px 10)
-        sym padding (px 4)
-
-        backgroundColor lemonchiffon
-        sym borderRadius (px 4)
-
-  --            li # ":first-child" ? do
-  --              marginLeft (px 0)
-
-      li # ":last-child" ? do
-        marginRight (px 0)
-
     "#main-content"  ? do
       maxWidth (px 700)
       width (pct 60)

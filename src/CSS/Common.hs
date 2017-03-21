@@ -186,6 +186,55 @@ commonCSS cfg = do
     importUrl "http://fonts.googleapis.com/css?family=Roboto Slab:100,100italic,300,300italic,400,400italic"
     importUrl "http://fonts.googleapis.com/css?family=Bad Script:100,100italic,300,300italic,400,400italic"
 
+    article # ":last-child" ? borderBottom solid (px 0) black
+
+    article # ".teaser" <? do
+      fontSize (Size.rem 0.9)
+      borderBottom solid (px 1) black
+      display flex
+      flexDirection column
+
+--        marginTop (Size.em 1.5)
+
+      paddingLeft (px 5)
+      paddingRight (px 5)
+      paddingTop (Size.em 2.5)
+      paddingBottom (Size.em 2.5)
+
+      figure ? do
+        float floatLeft
+        maxWidth (pct 25)
+        paddingLeft (Size.em 1)
+        paddingRight (Size.em 1)
+        
+        img ? maxWidth (pct 100)
+
+      hgroup ? do
+        textAlign justify
+        lineHeight (Size.em 1.5)
+
+
+        h1 ? do
+          fontWeight bold
+          fontSize (Size.em 1.2)
+          sym2 margin (Size.em 0) auto
+          textAlign justify
+          
+          a ? textDecoration none
+
+        h2 ? do
+          sym2 margin (Size.em 1) auto
+
+      footer ? do
+        lineHeight (Size.em 1.2)
+        width (pct 100)
+
+        time ? do
+          sym2 margin (px 0) (px 10)
+          display inlineBlock
+
+    article # ":last-child" ? borderBottom solid (px 0) black
+
     ul # ".keywords" ? do 
       display flex
       flexWrap Flexbox.wrap
@@ -200,6 +249,10 @@ commonCSS cfg = do
 
         backgroundColor lemonchiffon
         sym borderRadius (px 4)
+
+        a ? do
+          textDecoration none
+          color inherit
 
       li # ":last-child" ? do 
         marginRight (px 0)

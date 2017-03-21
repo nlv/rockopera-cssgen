@@ -78,6 +78,29 @@ table
   border-spacing  : 0;
 }
 
+ul.keywords
+{
+  display       : flex;
+  flex-wrap     : wrap;
+  align-content : space-between;
+}
+
+ul.keywords li
+{
+  display          : inline-block;
+  margin-top       : 10px;
+  margin-left      : 10px;
+  margin-right     : 10px;
+  padding          : 4px 4px 4px 4px;
+  background-color : #fffacd;
+  border-radius    : 4px 4px 4px 4px;
+}
+
+ul.keywords li:last-child
+{
+  margin-right : 0px;
+}
+
 html
 {
   -webkit-box-sizing : border-box;
@@ -288,29 +311,6 @@ blockquote.poem
   margin-top  : 1em;
   text-align  : end;
   font-weight : bold;
-}
-
-ul.keywords
-{
-  display       : flex;
-  flex-wrap     : wrap;
-  align-content : space-between;
-}
-
-ul.keywords li
-{
-  display          : inline-block;
-  margin-top       : 10px;
-  margin-left      : 10px;
-  margin-right     : 10px;
-  padding          : 4px 4px 4px 4px;
-  background-color : #fffacd;
-  border-radius    : 4px 4px 4px 4px;
-}
-
-ul.keywords li:last-child
-{
-  margin-right : 0px;
 }
 
 #main-content

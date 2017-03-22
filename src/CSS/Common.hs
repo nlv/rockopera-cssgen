@@ -186,6 +186,19 @@ commonCSS cfg = do
     importUrl "http://fonts.googleapis.com/css?family=Roboto Slab:100,100italic,300,300italic,400,400italic"
     importUrl "http://fonts.googleapis.com/css?family=Bad Script:100,100italic,300,300italic,400,400italic"
 
+    main_ # ".teasers-list" <? header <? h1 ? do
+      fontSize (Size.em 1.2)
+      color red
+      color green
+      textTransform uppercase
+
+    main_ # ".teasers-list" <? header <? h1 # ":before" ? do
+        content (stringContent "#")
+        fontSize (Size.em 1.2)
+        fontWeight bold
+
+
+
     article # ":last-child" ? borderBottom solid (px 0) black
 
     article # ".teaser" <? do
@@ -245,10 +258,17 @@ commonCSS cfg = do
         marginTop (Size.px 10)
         marginLeft (px 10)
         marginRight (px 10)
-        sym padding (px 4)
 
+        textTransform uppercase
+        whiteSpace nowrap
+        color red
+        color green
+
+{-
+        sym padding (px 6)
         backgroundColor lemonchiffon
         sym borderRadius (px 4)
+        -}
 
         a ? do
           textDecoration none
@@ -256,6 +276,13 @@ commonCSS cfg = do
 
       li # ":last-child" ? do 
         marginRight (px 0)
+
+    ul # ".keywords" <? li # ":before" ? do 
+      content (stringContent "#")
+      fontSize (Size.em 1.2)
+      fontWeight bold
+      
+
 
     html ? do
       boxSizing borderBox

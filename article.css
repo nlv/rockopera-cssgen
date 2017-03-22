@@ -78,6 +78,25 @@ table
   border-spacing  : 0;
 }
 
+
+
+main.teasers-list > header h1
+{
+  font-size      : 1.19999em;
+  color          : #ff0000;
+  color          : #008000;
+  text-transform : uppercase;
+}
+
+
+
+main.teasers-list > header h1:before
+{
+  content     : "#";
+  font-size   : 1.19999em;
+  font-weight : bold;
+}
+
 article:last-child
 {
   border-bottom : solid 0px #000000;
@@ -158,13 +177,14 @@ ul.keywords
 
 ul.keywords li
 {
-  display          : inline-block;
-  margin-top       : 10px;
-  margin-left      : 10px;
-  margin-right     : 10px;
-  padding          : 4px 4px 4px 4px;
-  background-color : #fffacd;
-  border-radius    : 4px 4px 4px 4px;
+  display        : inline-block;
+  margin-top     : 10px;
+  margin-left    : 10px;
+  margin-right   : 10px;
+  text-transform : uppercase;
+  white-space    : nowrap;
+  color          : #ff0000;
+  color          : #008000;
 }
 
 ul.keywords li a
@@ -176,6 +196,14 @@ ul.keywords li a
 ul.keywords li:last-child
 {
   margin-right : 0px;
+}
+
+
+ul.keywords li:before
+{
+  content     : "#";
+  font-size   : 1.19999em;
+  font-weight : bold;
 }
 
 html

@@ -81,7 +81,7 @@ mainCSS cfg = do
       marginLeft auto
       marginRight auto
 
-      h1 ? do
+      h1 <? do
         fontWeight bold
         fontSize (Size.em 1.2)
         margin (Size.em 1) auto (Size.em 0.5) auto 

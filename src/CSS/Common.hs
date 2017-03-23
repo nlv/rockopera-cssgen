@@ -198,7 +198,6 @@ commonCSS cfg = do
         fontWeight bold
 
 
-
     article # ":last-child" ? borderBottom solid (px 0) black
 
     article # ".teaser" <? do
@@ -207,20 +206,36 @@ commonCSS cfg = do
       display flex
       flexDirection column
 
---        marginTop (Size.em 1.5)
-
       paddingLeft (px 5)
       paddingRight (px 5)
       paddingTop (Size.em 2.5)
       paddingBottom (Size.em 2.5)
 
+
       figure ? do
+        position relative
         float floatLeft
         maxWidth (pct 25)
         paddingLeft (Size.em 1)
         paddingRight (Size.em 1)
-        
         img ? maxWidth (pct 100)
+
+      figure # ".video" ? do
+        position relative
+
+      figure # ".video" # ":before" ? do
+        display block
+        position absolute
+        content (stringContent "")
+        backgroundImage (url "../images/icons/movie.png")
+        backgroundRepeat noRepeat
+        backgroundSize $ (pct 30) `by` auto
+        backgroundPosition (sideCenter `placed` sideCenter)
+        zIndex 1
+        left (px 0)
+        top (px 0)
+        width (pct 100)
+        height (pct 100)
 
       hgroup ? do
         textAlign justify

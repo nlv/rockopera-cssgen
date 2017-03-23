@@ -97,6 +97,22 @@ main.teasers-list > header h1:before
   font-weight : bold;
 }
 
+#imgtest:before
+{
+  display             : block;
+  position            : absolute;
+  content             : "";
+  background-image    : url("../images/icons/movie.png");
+  background-repeat   : no-repeat;
+  background-size     : 30% auto;
+  background-position : center center;
+  z-index             : 1;
+  left                : 0px;
+  top                 : 0px;
+  width               : 100%;
+  height              : 100%;
+}
+
 article:last-child
 {
   border-bottom : solid 0px #000000;
@@ -116,6 +132,7 @@ article.teaser
 
 article.teaser figure
 {
+  position      : relative;
   float         : left;
   max-width     : 25%;
   padding-left  : 1em;
@@ -125,6 +142,27 @@ article.teaser figure
 article.teaser figure img
 {
   max-width : 100%;
+}
+
+article.teaser figure.video
+{
+  position : relative;
+}
+
+article.teaser figure.video:before
+{
+  display             : block;
+  position            : absolute;
+  content             : "";
+  background-image    : url("../images/icons/movie.png");
+  background-repeat   : no-repeat;
+  background-size     : 30% auto;
+  background-position : center center;
+  z-index             : 1;
+  left                : 0px;
+  top                 : 0px;
+  width               : 100%;
+  height              : 100%;
 }
 
 article.teaser hgroup
